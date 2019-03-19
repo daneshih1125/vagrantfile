@@ -8,6 +8,7 @@ Vagrant.configure("2") do |config|
     xenial01.vm.hostname = 'xenial01'
     xenial01.vm.box_url = "ubuntu/xenial64"
     xenial01.vm.network :private_network, ip: "192.168.67.11"
+    xenial01.disksize.size = '20GB'
     xenial01.vm.provider :virtualbox do |v|
       v.customize ["modifyvm", :id, "--memory", 2048]
     end
